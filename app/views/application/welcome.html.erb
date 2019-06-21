@@ -1,0 +1,24 @@
+<h1> Welcome to Gymtime! </h1>
+<h3> Are you ready to find the perfect fitness instructor?</h3>
+
+<% if user_signed_in? %>
+<div> <h2> Training Day and Times: </h2>
+  <ul>
+    <li><%= link_to "Strength", training_path("Strength") %></li>
+    <li><%= link_to "Yoga", training_path("Yoga")%></li>
+    <li><%= link_to"Cardio", training_path("Cardio") %></li>
+    <li><%= link_to "Spin", training_path("Spin") %></li>
+    <li><%= link_to "Pilates", training_path("Pilates") %></li>
+    <li><%= link_to "Barre", training_path("Barre") %></li>
+  </ul>
+</div>
+<% end %>
+
+<% if user_signed_in? %>
+<h3> Hello, <%= current_user.name %>! What would you like to do? </h3>
+  <p><%= link_to "View All Training Programs", user_trainings_path(@user), action: :index %></p>
+  <p><%= link_to "View All Instructors", instructors_path %></p>
+<% end %>
+<% if user_signed_in? && current_user.admin %>
+  <p><%= link_to "View Current Users", users_path %></p>
+<% end %>
