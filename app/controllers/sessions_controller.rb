@@ -4,12 +4,9 @@ class SessionsController < Devise::SessionsController
   end
 
   def create
-    user = User.create(user_params)
-    if user.save
-      redirect_to user_path(user)
-    else
-      render :new
-    end
+    auth_hash = request.env['omniauth.auth']
+
+    render :text => auth_hash.inspect
   end
 
 end

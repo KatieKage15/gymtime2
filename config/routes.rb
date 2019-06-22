@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
+
+  root to: "application#welcome"
+
+  devise_for :users, :controllers => {:omniauth_callbacks => "callbacks", :registrations => "registrations"}
+  resources :users, only: [:index, :show, :edit]
   resources :trainings
   resources :instructors
-  devise_for :users, :controllers => {:registrations => "registrations"}
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :users do
+    resources :trainings
+      delete = "taingings#destroy"
+  end
+
   devise_scope :user do
     get 'login', to: 'devise/sessions#new'
   end
@@ -10,6 +18,4 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'signup', to: 'devise/registrations#new'
   end
-
-  root to: "application#welcome"
 end

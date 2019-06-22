@@ -1,8 +1,8 @@
-#config.omniauth :github, 'd3704ea614ee019d27b2', '42caea236edc3b1e701df03d6ba8677064a84f77', scope: 'user:email'
-Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :developer unless Rails.env.production?
-  provider :github, 'd3704ea614ee019d27b2', '42caea236edc3b1e701df03d6ba8677064a84f77', scope: 'user:email'
-end
+
+ Rails.application.config.middleware.use OmniAuth::Builder do
+   provider :developer unless Rails.env.production?
+   provider :github, 'd3704ea614ee019d27b2', '42caea236edc3b1e701df03d6ba8677064a84f77', scope: 'user:email'
+ end
 # frozen_string_literal: true
 
 # Use this hook to configure devise mailer, warden hooks and so forth.

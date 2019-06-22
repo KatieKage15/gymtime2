@@ -10,7 +10,7 @@ class TrainingsController < ApplicationController
   end
 
   def show
-    @training_instructor = Instructor.training(@training_name)
+    @training = Instructor.training(@training_name)
   end
 
   def destroy
