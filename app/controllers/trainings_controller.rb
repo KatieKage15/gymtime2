@@ -10,8 +10,7 @@ class TrainingsController < ApplicationController
   end
 
   def show
-    @training_name = specialty_path.slice(10...)
-    @training_tutors = Instructor.training(@training_name)
+    @training_instructor = Instructor.training(@training_name)
   end
 
   def destroy
