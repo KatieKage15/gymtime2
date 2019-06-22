@@ -1,14 +1,7 @@
 class TrainingsController < ApplicationController
 
   def index
-    if current_user.specialty !=[]
-      @user_training = current_user.training
-      @training = training.all
-      @user_id = current_user.id
-    else
-      flash[:error] = "You need to pick a training session before you can choose an instructor."
-      redirect_to root_url
-    end
+    @training = Training.all
   end
 
   def create
