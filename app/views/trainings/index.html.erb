@@ -1,3 +1,5 @@
-<h1> Thank you for booking your session! Your instructor will reach out soon! </h1>
+Below is the day and time this session is held:
+
+<%= link_to "#{training_id.name}" - "#{training_id.day_time}", instructor_path(instructor.id) %>
 
 <%= link_to "Back to Instructors", instructors_path %>
