@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     get 'signup', to: 'devise/registrations#new'
   end
 
-  root to: "users#new"
+  root to: "application#welcome"
 end
