@@ -1,0 +1,10 @@
+<h1>Your Profile</h1>
+<p> Email: <%= @user.email %> </p>
+<p> Username: <%= @user.username %> </p>
+
+<% if @user.admin %>
+  <p>ADMIN</p>
+<% end %>
+
+<%= link_to "Edit Account Settings", edit_user_registration_path %>
+<%= link_to "View Instructors", tutors_path %>

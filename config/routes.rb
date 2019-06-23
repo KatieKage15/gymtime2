@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :instructors
   resources :users do
     resources :trainings
-      delete = "taingings#destroy"
+      delete = "traingings#destroy"
   end
 
   devise_scope :user do

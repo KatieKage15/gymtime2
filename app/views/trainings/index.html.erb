@@ -1,7 +1,7 @@
 Below is the day and time this session is held:
-<div>
+
   <% @training.each do |training| %>
-      <li><%= link_to "#{training.name}", training_path(training.id) %></li>
-    <% end %></div>
-<div>
-<%= link_to "Back to Instructors", instructors_path %></div>
+    <li><%= link_to "#{training.name}", training_path(training.id) %></li>
+    <% end %>
+
+<div><%= link_to "Back to Instructors", instructors_path %></div>
