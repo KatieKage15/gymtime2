@@ -7,7 +7,7 @@ class User < ApplicationRecord
     has_many :trainings
     has_many :instructors, through: :trainings
 
-    validates_presence_of :username, :email
+    validates_presence_of :email
     validates_format_of :email, with: /@/
     validates_uniqueness_of :email, case_sensitive: false
     validates_uniqueness_of :username, case_sensitive: false
@@ -21,4 +21,4 @@ class User < ApplicationRecord
     user.password = Devise.friendly_token[0,20]
     end
   end
-end 
+end

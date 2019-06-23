@@ -1,7 +1,14 @@
 class TrainingsController < ApplicationController
 
   def index
-    @training = Training.all
+    if current_user.trainings !=[]
+      @user_trainings = current_user.trainings
+      @subjects = Training.all
+      @user_id = current_user.id
+    else
+      flash[:error] = "You need to sign up for a training instructor before you can view your booked sessions."
+      redirect_to root_url
+    end
   end
 
   def create
@@ -10,7 +17,8 @@ class TrainingsController < ApplicationController
   end
 
   def show
-    @training = Instructor.training(@training_name)
+    @training_name = training_path.slice(10...)
+    @training_instructor = Instructor.training(@training_name)
   end
 
   def destroy
