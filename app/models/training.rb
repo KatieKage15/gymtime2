@@ -1,5 +1,5 @@
 class Training < ApplicationRecord
-  belongs_to :client
+  belongs_to :user
   belongs_to :instructor
 
   validates :name, presence: true
