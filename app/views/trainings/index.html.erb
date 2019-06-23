@@ -1,7 +1,10 @@
-Below is the day and time this session is held:
+<h1>Below is the day and time this session is held:</h1>
 
-  <% @training.each do |training| %>
-    <li><%= link_to "#{training.name}", training_path(training.id) %></li>
-    <% end %>
+<ul>
+<% @user_training.each do |training| %>
+  <li> <%= "#{training.name} - #{training.instructor.name}" %> </li>
+    <%= link_to "Cancel Session", user_training_path(@user_id, training.id), method: :delete %>
+  <% end %>
+</ul>
 
-<div><%= link_to "Back to Instructors", instructors_path %></div>
+<%= link_to "View Instructors", instructors_path %>

@@ -1,0 +1,8 @@
+<h2> These are the instructors that specialize in:</h2>
+<h1><%= @specilty_name %> </h1>
+
+<ul>
+  <% @training_instructors.each do |instructor| %>
+    <li><%= link_to "#{instructor.name}", instructor_path(instructor.id) %></li>
+  <% end %>
+</ul>
