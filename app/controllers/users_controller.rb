@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    binding.pry 
   end
 
   def destroy
@@ -30,6 +31,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-      params.require(:user).permit(:username, :name, :email, :password, :admin, :provider, :uid)
+      params.require(:user).permit(:username, :email, :password, :admin, :provider, :uid)
   end
 end
