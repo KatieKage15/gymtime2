@@ -17,6 +17,7 @@ class TrainingsController < ApplicationController
   end
 
   def show
+    @training = Training.find(id: params[:name])
     @training_name = training_path.slice(10...)
     @training_instructor = Instructor.training(@training_name)
   end
