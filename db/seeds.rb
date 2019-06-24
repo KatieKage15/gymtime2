@@ -20,7 +20,7 @@ Instructor.create(name: 'Lauren', gym: 'Speedy', specialty: 'Cardio')
 Instructor.create(name: 'Peter', gym: 'Move the Body', specialty: 'Pilates')
 Instructor.create(name: 'Greg', gym: 'Grassroots Fitness', specialty: 'Spin')
 
-Training.create(name: 'strength', day_time: '10:00')
+Training.create(name: 'Strength', day_time: '10:00')
 Training.create(name: 'Cardio', day_time: '8:00')
 Training.create(name: 'Spin', day_time: '7:00')
 Training.create(name: 'Yoga', day_time: '12:00')

@@ -1,15 +1,24 @@
 class TrainingsController < ApplicationController
 
   def index
-    if current_user.trainings !=[]
-      @user_trainings = current_user.trainings
-      @training = Training.all
-      @user_id = current_user.id
+    @training = Training.find(params[:name]).first
+    if params[:training]
+      methods = params[:training][:methods]
+      @training = Training.send_chain(methods)
     else
-      flash[:error] = "You need to sign up for a training instructor before you can view your booked sessions."
-      redirect_to root_url
+      @training = Training.all
     end
   end
+
+  #   if current_user
+  #     @training_time = Training.name
+  #     @training = Training.all
+  #     @user_id = current_user.id
+  #   else
+  #     flash[:error] = "You need to sign up for a training instructor before you can view your booked sessions."
+  #     redirect_to root_url
+  #   end
+  # end
 
   def create
     @training = Training.create(user_id: current_user.id, instructor_id: params[:instructor_id], name: params[:instructor_training])
@@ -25,5 +34,15 @@ class TrainingsController < ApplicationController
     @training = Training.find(params[:id])
     @training.delete
     redirect_to user_training_path
+  end
+
+  private
+
+  def find_training
+    @training = Training.find_by(id: params[:id])
+  end
+
+  def training_params
+    params.require(:training).permit(:name, :day_time)
   end
 end

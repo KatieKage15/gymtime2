@@ -2,7 +2,7 @@
 <h3> Are you ready to find the perfect fitness instructor?</h3>
 
 <% if user_signed_in? %>
-<div> <h2> Training Specialties and Times: </h2>
+<div> <h2> Training Specialties: </h2>
   <ul>
     <li><%= link_to "Strength", training_path("Strength") %></li>
     <li><%= link_to "Yoga", training_path("Yoga")%></li>
@@ -15,8 +15,6 @@
 <% end %>
 
 <% if user_signed_in? %>
-<h3> Hello, <%= current_user.username %>! What would you like to do? </h3>
-  <p><%= link_to "View All Training Programs", user_trainings_path(@user), action: :index %></p>
   <p><%= link_to "View All Instructors", instructors_path %></p
 <% end %>
 

@@ -1,11 +1,11 @@
 <h1>Your Profile</h1>
 
-Username: <%= @user.username %>
-Email: <%= @user.email %>
+<li>Username: <%= @user.username %></li>
+<li>Email: <%= @user.email %></li>
 
 <% if @user.admin %>
   <p>ADMIN</p>
 <% end %>
 
 <%= link_to "Edit Account Settings", edit_user_registration_path %>
-<%= link_to "View Instructors", tutors_path %>
+<%= link_to "View Instructors", instructors_path %>
