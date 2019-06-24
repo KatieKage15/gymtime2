@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 User.create(email: 'robb@gmail.com', username: 'robb123', password: 'abc123')
 User.create(email: 'katie@gmail.com', username: 'katie456', password: 'abc456')
 User.create(email: 'rosie@gmail.com', username: 'rosie789', password: 'abc789')
@@ -20,8 +21,8 @@ Instructor.create(name: 'Lauren', gym: 'Speedy', specialty: 'Cardio')
 Instructor.create(name: 'Peter', gym: 'Move the Body', specialty: 'Pilates')
 Instructor.create(name: 'Greg', gym: 'Grassroots Fitness', specialty: 'Spin')
 
-Training.create(name: 'Strength', day_time: '10:00')
-Training.create(name: 'Cardio', day_time: '8:00')
-Training.create(name: 'Spin', day_time: '7:00')
-Training.create(name: 'Yoga', day_time: '12:00')
-Training.create(name: 'Pilates', day_time: '5:00')
+training = Training.create([{ name: 'Strength'}, {day_time: '10:00'}])
+training = Training.create([{name: 'Cardio'}, {day_time: '8:00'}])
+training = Training.create([{name: 'Spin'}, {day_time: '7:00'}])
+training = Training.create([{name: 'Yoga'}, {day_time: '12:00'}])
+training = Training.create([{name: 'Pilates'}, {day_time: '5:00'}])

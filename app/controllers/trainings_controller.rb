@@ -1,7 +1,6 @@
 class TrainingsController < ApplicationController
 
   def index
-    @training = Training.find(params[:name]).first
     if params[:training]
       methods = params[:training][:methods]
       @training = Training.send_chain(methods)
