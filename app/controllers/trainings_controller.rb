@@ -3,7 +3,7 @@ class TrainingsController < ApplicationController
   def index
     if current_user.trainings !=[]
       @user_trainings = current_user.trainings
-      @subjects = Training.all
+      @training = Training.all
       @user_id = current_user.id
     else
       flash[:error] = "You need to sign up for a training instructor before you can view your booked sessions."
@@ -17,7 +17,6 @@ class TrainingsController < ApplicationController
   end
 
   def show
-    @training = Training.find(id: params[:name])
     @training_name = training_path.slice(10...)
     @training_instructor = Instructor.training(@training_name)
   end
