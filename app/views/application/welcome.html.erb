@@ -2,14 +2,14 @@
 <h3> Are you ready to find the perfect fitness instructor?</h3>
 
 <% if user_signed_in? %>
-<div> <h2> Training Specialties: </h2>
+<div> <h2> Available Training Specialties: </h2>
   <ul>
-    <li><%= link_to "Strength", training_path("Strength") %></li>
-    <li><%= link_to "Yoga", training_path("Yoga")%></li>
-    <li><%= link_to"Cardio", training_path("Cardio") %></li>
-    <li><%= link_to "Spin", training_path("Spin") %></li>
-    <li><%= link_to "Pilates", training_path("Pilates") %></li>
-    <li><%= link_to "Barre", training_path("Barre") %></li>
+    <li><%= "Strength" %></li>
+    <li><%= "Yoga" %></li>
+    <li><%= "Cardio" %></li>
+    <li><%= "Spin" %></li>
+    <li><%= "Pilates" %></li>
+    <li><%= "Barre" %></li>
   </ul>
 </div>
 <% end %>
