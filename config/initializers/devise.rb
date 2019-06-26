@@ -1,7 +1,6 @@
 
  Rails.application.config.middleware.use OmniAuth::Builder do
    provider :developer unless Rails.env.production?
-   provider :github, 'd3704ea614ee019d27b2', '42caea236edc3b1e701df03d6ba8677064a84f77', scope: 'user:email'
  end
 # frozen_string_literal: true
 
@@ -288,7 +287,8 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
-
+  config.omniauth :github, 'd3704ea614ee019d27b2', '42caea236edc3b1e701df03d6ba8677064a84f77'
+  #
   # ==> Turbolinks configuration
   # If your app is using Turbolinks, Turbolinks::Controller needs to be included to make redirection work correctly:
   #
