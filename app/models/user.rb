@@ -7,8 +7,8 @@ class User < ApplicationRecord
     has_many :trainings
     has_many :instructors, through: :trainings
 
-    validates_presence_of :email
-    validates_format_of :email, with: /@/
+    # validates_presence_of :email
+    # validates_format_of :email, with: /@/
     validates :email, uniqueness: true
     validates :username, uniqueness: true
 

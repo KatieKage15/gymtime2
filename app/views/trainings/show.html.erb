@@ -3,6 +3,5 @@
 
 <ul>
   <% @training_instructors.each do |instructor| %>
-    <li><%= "#{instructor.name}", instructor_path(instructor.id) %></li>
+    <li><%= link_to "#{instructor.name}", instructor_path(intuctor.id) %></li>
   <% end %>
-</ul>
